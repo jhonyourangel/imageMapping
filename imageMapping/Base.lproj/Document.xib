@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5023" systemVersion="13A603" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5023"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5056"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="Document">
             <connections>
+                <outlet property="imageCell" destination="ELn-mG-pml" id="k9R-8A-MKB"/>
+                <outlet property="imageView" destination="K1r-mI-vSb" id="fpC-bW-smZ"/>
                 <outlet property="window" destination="xOd-HO-29H" id="JIz-fz-R2o"/>
             </connections>
         </customObject>
@@ -15,25 +17,119 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="133" y="235" width="507" height="413"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
             <value key="minSize" type="size" width="94" height="86"/>
             <view key="contentView" id="gIp-Ho-8D9">
                 <rect key="frame" x="0.0" y="0.0" width="507" height="413"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="Hz6-mo-xeY">
-                        <rect key="frame" x="119" y="195" width="268" height="22"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Your document contents here" id="JDq-Ah-v2f">
-                            <font key="font" metaFont="system" size="18"/>
-                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
+                    <splitView dividerStyle="paneSplitter" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f5S-rD-O42">
+                        <rect key="frame" x="0.0" y="0.0" width="507" height="413"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <subviews>
+                            <customView id="VQy-zE-wjR">
+                                <rect key="frame" x="0.0" y="0.0" width="325" height="413"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <subviews>
+                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="K1r-mI-vSb" customClass="imageView">
+                                        <rect key="frame" x="0.0" y="0.0" width="325" height="413"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <imageCell key="cell" selectable="YES" editable="YES" alignment="left" id="ELn-mG-pml"/>
+                                        <connections>
+                                            <outlet property="xNumber" destination="BYF-U8-89A" id="3Pb-pX-8q8"/>
+                                            <outlet property="yNumber" destination="05w-eJ-tHJ" id="mjN-2R-xyl"/>
+                                        </connections>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="K1r-mI-vSb" firstAttribute="top" secondItem="VQy-zE-wjR" secondAttribute="top" id="8Uf-QT-6J1"/>
+                                    <constraint firstAttribute="trailing" secondItem="K1r-mI-vSb" secondAttribute="trailing" id="VxN-lh-lNN"/>
+                                    <constraint firstAttribute="bottom" secondItem="K1r-mI-vSb" secondAttribute="bottom" id="ZCL-e2-wzm"/>
+                                    <constraint firstItem="K1r-mI-vSb" firstAttribute="leading" secondItem="VQy-zE-wjR" secondAttribute="leading" id="xqW-KK-Kgl"/>
+                                </constraints>
+                            </customView>
+                            <customView id="YO7-hu-dqW">
+                                <rect key="frame" x="335" y="0.0" width="172" height="413"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <subviews>
+                                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="05w-eJ-tHJ">
+                                        <rect key="frame" x="88" y="371" width="64" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="Kan-Dg-cfA">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TDi-dw-Fn8">
+                                        <rect key="frame" x="11" y="-1" width="123" height="19"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="roundRect" title="Resize Image" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="g6A-F4-HP3">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="controlContent"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="resizeImage:" target="K1r-mI-vSb" id="ZFn-hd-bz3"/>
+                                        </connections>
+                                    </button>
+                                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BYF-U8-89A">
+                                        <rect key="frame" x="11" y="371" width="69" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="nCq-7T-3F3">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PTK-fj-rEt">
+                                        <rect key="frame" x="15" y="396" width="13" height="17"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="X" id="Cpz-pZ-2sc">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z8j-yh-bCq">
+                                        <rect key="frame" x="131" y="396" width="13" height="17"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Y" id="iZ8-CG-PnI">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="he2-I0-a35">
+                                        <rect key="frame" x="29" y="344" width="123" height="19"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="roundRect" title="Crop" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="xZr-Eg-wnn">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="controlContent"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="cropImage:" target="K1r-mI-vSb" id="QfE-zB-KnZ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="172" id="yfw-nK-GWj"/>
+                                </constraints>
+                            </customView>
+                        </subviews>
+                        <holdingPriorities>
+                            <real value="250"/>
+                            <real value="250"/>
+                        </holdingPriorities>
+                    </splitView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="OG3-1c-Sd0"/>
-                    <constraint firstAttribute="centerY" secondItem="Hz6-mo-xeY" secondAttribute="centerY" id="s6i-b7-llN"/>
+                    <constraint firstItem="f5S-rD-O42" firstAttribute="top" secondItem="gIp-Ho-8D9" secondAttribute="top" id="2t1-2o-tM2"/>
+                    <constraint firstAttribute="trailing" secondItem="f5S-rD-O42" secondAttribute="trailing" id="8LX-ta-Ry8"/>
+                    <constraint firstAttribute="bottom" secondItem="f5S-rD-O42" secondAttribute="bottom" id="BUm-7k-dV6"/>
+                    <constraint firstAttribute="bottom" secondItem="f5S-rD-O42" secondAttribute="bottom" id="Jua-qD-L9v"/>
+                    <constraint firstItem="f5S-rD-O42" firstAttribute="top" secondItem="gIp-Ho-8D9" secondAttribute="top" id="ZoZ-ZL-CEC"/>
+                    <constraint firstItem="f5S-rD-O42" firstAttribute="leading" secondItem="gIp-Ho-8D9" secondAttribute="leading" id="atc-ot-zjj"/>
+                    <constraint firstItem="f5S-rD-O42" firstAttribute="leading" secondItem="gIp-Ho-8D9" secondAttribute="leading" id="v0f-1J-riP"/>
                 </constraints>
             </view>
             <connections>

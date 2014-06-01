@@ -9,5 +9,7 @@
 #import <Cocoa/Cocoa.h>
 
 @interface Document : NSDocument
+@property (strong) IBOutlet NSImageView *imageView;
+@property (strong) IBOutlet NSImageCell *imageCell;
 
 @end

@@ -19,6 +19,9 @@
 		51474ECB1926239400373E67 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51474EA71926239300373E67 /* Cocoa.framework */; };
 		51474ED31926239400373E67 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 51474ED11926239400373E67 /* InfoPlist.strings */; };
 		51474ED51926239400373E67 /* imageMappingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 51474ED41926239400373E67 /* imageMappingTests.m */; };
+		51474EDF1926244F00373E67 /* gray.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 51474EDE1926244F00373E67 /* gray.jpg */; };
+		51474EE11926250200373E67 /* gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 51474EE01926250200373E67 /* gray.png */; };
+		51474EE419262C7B00373E67 /* imageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 51474EE319262C7B00373E67 /* imageView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +55,10 @@
 		51474ED01926239400373E67 /* imageMappingTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "imageMappingTests-Info.plist"; sourceTree = "<group>"; };
 		51474ED21926239400373E67 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		51474ED41926239400373E67 /* imageMappingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = imageMappingTests.m; sourceTree = "<group>"; };
+		51474EDE1926244F00373E67 /* gray.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = gray.jpg; sourceTree = "<group>"; };
+		51474EE01926250200373E67 /* gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gray.png; sourceTree = "<group>"; };
+		51474EE219262C7B00373E67 /* imageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = imageView.h; sourceTree = "<group>"; };
+		51474EE319262C7B00373E67 /* imageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = imageView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,8 +126,11 @@
 			children = (
 				51474EB91926239300373E67 /* Document.h */,
 				51474EBA1926239300373E67 /* Document.m */,
+				51474EE219262C7B00373E67 /* imageView.h */,
+				51474EE319262C7B00373E67 /* imageView.m */,
 				51474EBC1926239300373E67 /* Document.xib */,
 				51474EBF1926239400373E67 /* MainMenu.xib */,
+				51474EDE1926244F00373E67 /* gray.jpg */,
 				51474EC21926239400373E67 /* Images.xcassets */,
 				51474EAE1926239300373E67 /* Supporting Files */,
 			);
@@ -130,6 +140,7 @@
 		51474EAE1926239300373E67 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				51474EE01926250200373E67 /* gray.png */,
 				51474EAF1926239300373E67 /* imageMapping-Info.plist */,
 				51474EB01926239300373E67 /* InfoPlist.strings */,
 				51474EB31926239300373E67 /* main.m */,
@@ -237,7 +248,9 @@
 				51474EC31926239400373E67 /* Images.xcassets in Resources */,
 				51474EB21926239300373E67 /* InfoPlist.strings in Resources */,
 				51474EB81926239300373E67 /* Credits.rtf in Resources */,
+				51474EDF1926244F00373E67 /* gray.jpg in Resources */,
 				51474EC11926239400373E67 /* MainMenu.xib in Resources */,
+				51474EE11926250200373E67 /* gray.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +271,7 @@
 			files = (
 				51474EBB1926239300373E67 /* Document.m in Sources */,
 				51474EB41926239300373E67 /* main.m in Sources */,
+				51474EE419262C7B00373E67 /* imageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
